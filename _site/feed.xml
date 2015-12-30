@@ -6,8 +6,8 @@
 </description>
     <link>http://ikai.github.io/</link>
     <atom:link href="http://ikai.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Dec 2015 19:35:16 -0800</pubDate>
-    <lastBuildDate>Tue, 29 Dec 2015 19:35:16 -0800</lastBuildDate>
+    <pubDate>Tue, 29 Dec 2015 20:00:07 -0800</pubDate>
+    <lastBuildDate>Tue, 29 Dec 2015 20:00:07 -0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -54,7 +54,8 @@ will give you a crash course on binary and hex.&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;intro-to-binary&quot;&gt;Intro to Binary&lt;/h1&gt;
-&lt;p&gt;What’s the deal with binary?&lt;/p&gt;
+
+&lt;h4 id=&quot;whats-the-deal-with-binary&quot;&gt;What’s the deal with binary?&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/binary.jpg&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
 
@@ -97,10 +98,60 @@ same example as above, looks like this in binary:&lt;/p&gt;
 
 &lt;p&gt;Can you see the pattern? If not, let this illustration roughly explain how to convert binary numbers into decimal numbers:&lt;/p&gt;
 
-&lt;p&gt;IKAI FILL IN A DRAWING OR DOODLE HERE LATER&lt;/p&gt;
+&lt;p&gt;TODO IKAI FILL IN A DRAWING OR DOODLE HERE LATER&lt;/p&gt;
 
 &lt;p&gt;Binary is good for computers, because it’s simple to represent each digit place as either “on” or “off”,
-“true” or “false”. This has various advantages that are outside the scope of this guide.&lt;/p&gt;
+“true” or “false”. This has various advantages that are outside the scope of this guide. Without going
+too much into binary math, here’s what addition would look like in binary:&lt;/p&gt;
+
+&lt;p&gt;TODO IKAI FILL IN A DRAWING OR DOODLE HERE LATER ABOUT ADDITION IN BINARY&lt;/p&gt;
+
+&lt;p&gt;This sort of math is actually very easy for computers to process using “bitwise” operators. You know
+bitwise operators? How programming languages have the single &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; or single &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt;? This is the sort
+of thing they are used for. There’s one interesting properties of binary numbers: if you add a 0 to
+the least significant bit (we’ll cover “bits” in the next section), that is, the lowest value “digit”,
+you double the number. See the following chart:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;1     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 1
+10    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 2
+100   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 4
+1000  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 8
+10000 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 16&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If these numbers look familiar, that’s because this is how computer scientists think: in terms of doubling.
+An alternative representation is powers of 2: &lt;code class=&quot;highlighter-rouge&quot;&gt;2**1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;2**2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;2**3&lt;/code&gt;, and so forth. Decimal numbers have
+a related property:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;1
+10
+100
+1000
+10000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Adding a zero to the end of the number multiples the value by 10 in base-10. Make sense? The &lt;code class=&quot;highlighter-rouge&quot;&gt;N&lt;/code&gt; in
+“base-N” tells you how much you are effectively multiplying the number by when you add a 0 to the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Bonus factoid:&lt;/em&gt; multiplying a number by 10 is often referred to as “increasing an order of magnitude”.
+To remember this, for us Californians, remember that &lt;a href=&quot;https://en.wikipedia.org/wiki/Richter_magnitude_scale&quot;&gt;earthquakes are often referred to by their “order
+of magnitude”&lt;/a&gt; - a 7.0 earthquake has
+10 times more “shaking power” (SORRY, I’M NOT A GEOLOGIST) than a 6.0 earthquake.&lt;/p&gt;
+
+&lt;h4 id=&quot;bits-and-bytes&quot;&gt;Bits and bytes&lt;/h4&gt;
+
+&lt;p&gt;A single place in binary is called a “bit”. 8 bits is called a “byte”. How does this relate to programming?
+Suppose you create an integer. A 32-bit that is all 1s is the “largest” value you can assign in binary:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;11111111 11111111 11111111 11111111&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;That means the maximum value an integer can have is &lt;code class=&quot;highlighter-rouge&quot;&gt;4294967295&lt;/code&gt;, according to our &lt;a href=&quot;http://www.binaryhexconverter.com/binary-to-decimal-converter&quot;&gt;binary to decimal converter&lt;/a&gt;. But wait! Why is the maximum
+integer value &lt;code class=&quot;highlighter-rouge&quot;&gt;2147483647&lt;/code&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/2147483647_(number)&quot;&gt;according to Wikipedia&lt;/a&gt;?
+That’s because this number is the maximum &lt;em&gt;signed&lt;/em&gt; integer, which includes decimals. The maximum
+unsigned integer is still &lt;code class=&quot;highlighter-rouge&quot;&gt;4,294,967,295&lt;/code&gt;. Thanks &lt;a href=&quot;https://en.wikipedia.org/wiki/32-bit&quot;&gt;Wikipedia, again&lt;/a&gt;!
+Representing negative numbers is outside the scope of this guide. If you’re interested, here’s &lt;a href=&quot;https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html&quot;&gt;Cornell’s
+guide to two’s complement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Why isn’t a megabyte exactly 1 million bytes? Why is it 1048576 bytes? Because this is 1024 times 1024.
+1024 is 2 to the 10th power, which in binary is 1 followed by ten 0s.&lt;/p&gt;
 
 &lt;h1 id=&quot;intro-to-hexadecimal&quot;&gt;Intro to Hexadecimal&lt;/h1&gt;
 </description>

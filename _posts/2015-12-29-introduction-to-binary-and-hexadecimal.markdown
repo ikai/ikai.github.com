@@ -20,7 +20,8 @@ This guide briefly uses vim.
 
 Intro to Binary
 ===
-What's the deal with binary?
+
+#### What's the deal with binary?
 
 <img src="/assets/binary.jpg" width="400">
 
@@ -67,11 +68,64 @@ same example as above, looks like this in binary:
 
 Can you see the pattern? If not, let this illustration roughly explain how to convert binary numbers into decimal numbers:
 
-IKAI FILL IN A DRAWING OR DOODLE HERE LATER
+TODO IKAI FILL IN A DRAWING OR DOODLE HERE LATER
 
 Binary is good for computers, because it's simple to represent each digit place as either "on" or "off",
-"true" or "false". This has various advantages that are outside the scope of this guide.
+"true" or "false". This has various advantages that are outside the scope of this guide. Without going
+too much into binary math, here's what addition would look like in binary:
 
+TODO IKAI FILL IN A DRAWING OR DOODLE HERE LATER ABOUT ADDITION IN BINARY
+
+This sort of math is actually very easy for computers to process using "bitwise" operators. You know
+bitwise operators? How programming languages have the single `|` or single `&`? This is the sort
+of thing they are used for. There's one interesting properties of binary numbers: if you add a 0 to
+the least significant bit (we'll cover "bits" in the next section), that is, the lowest value "digit",
+you double the number. See the following chart:
+
+{% highlight bash %}
+1     => 1
+10    => 2
+100   => 4
+1000  => 8
+10000 => 16
+{% endhighlight %}
+
+If these numbers look familiar, that's because this is how computer scientists think: in terms of doubling.
+An alternative representation is powers of 2: `2**1`, `2**2`, `2**3`, and so forth. Decimal numbers have
+a related property:
+
+{% highlight bash %}
+1
+10
+100
+1000
+10000
+{% endhighlight %}
+
+Adding a zero to the end of the number multiples the value by 10 in base-10. Make sense? The `N` in
+"base-N" tells you how much you are effectively multiplying the number by when you add a 0 to the end.
+
+*Bonus factoid:* multiplying a number by 10 is often referred to as "increasing an order of magnitude".
+To remember this, for us Californians, remember that [earthquakes are often referred to by their "order
+of magnitude"](https://en.wikipedia.org/wiki/Richter_magnitude_scale) - a 7.0 earthquake has
+10 times more "shaking power" (SORRY, I'M NOT A GEOLOGIST) than a 6.0 earthquake.
+
+#### Bits and bytes
+
+A single place in binary is called a "bit". 8 bits is called a "byte". How does this relate to programming?
+Suppose you create an integer. A 32-bit that is all 1s is the "largest" value you can assign in binary:
+
+`11111111 11111111 11111111 11111111`
+
+That means the maximum value an integer can have is `4294967295`, according to our [binary to decimal converter](http://www.binaryhexconverter.com/binary-to-decimal-converter). But wait! Why is the maximum
+integer value `2147483647`, [according to Wikipedia](https://en.wikipedia.org/wiki/2147483647_(number))?
+That's because this number is the maximum _signed_ integer, which includes decimals. The maximum
+unsigned integer is still `4,294,967,295`. Thanks [Wikipedia, again](https://en.wikipedia.org/wiki/32-bit)!
+Representing negative numbers is outside the scope of this guide. If you're interested, here's [Cornell's
+guide to two's complement](https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html).
+
+Why isn't a megabyte exactly 1 million bytes? Why is it 1048576 bytes? Because this is 1024 times 1024.
+1024 is 2 to the 10th power, which in binary is 1 followed by ten 0s.
 
 
 Intro to Hexadecimal

@@ -76,7 +76,8 @@ will give you a crash course on binary and hex.</p>
 </ul>
 
 <h1 id="intro-to-binary">Intro to Binary</h1>
-<p>What’s the deal with binary?</p>
+
+<h4 id="whats-the-deal-with-binary">What’s the deal with binary?</h4>
 
 <p><img src="/assets/binary.jpg" width="400" /></p>
 
@@ -119,10 +120,60 @@ same example as above, looks like this in binary:</p>
 
 <p>Can you see the pattern? If not, let this illustration roughly explain how to convert binary numbers into decimal numbers:</p>
 
-<p>IKAI FILL IN A DRAWING OR DOODLE HERE LATER</p>
+<p>TODO IKAI FILL IN A DRAWING OR DOODLE HERE LATER</p>
 
 <p>Binary is good for computers, because it’s simple to represent each digit place as either “on” or “off”,
-“true” or “false”. This has various advantages that are outside the scope of this guide.</p>
+“true” or “false”. This has various advantages that are outside the scope of this guide. Without going
+too much into binary math, here’s what addition would look like in binary:</p>
+
+<p>TODO IKAI FILL IN A DRAWING OR DOODLE HERE LATER ABOUT ADDITION IN BINARY</p>
+
+<p>This sort of math is actually very easy for computers to process using “bitwise” operators. You know
+bitwise operators? How programming languages have the single <code class="highlighter-rouge">|</code> or single <code class="highlighter-rouge">&amp;</code>? This is the sort
+of thing they are used for. There’s one interesting properties of binary numbers: if you add a 0 to
+the least significant bit (we’ll cover “bits” in the next section), that is, the lowest value “digit”,
+you double the number. See the following chart:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">1     <span class="o">=</span>&gt; 1
+10    <span class="o">=</span>&gt; 2
+100   <span class="o">=</span>&gt; 4
+1000  <span class="o">=</span>&gt; 8
+10000 <span class="o">=</span>&gt; 16</code></pre></figure>
+
+<p>If these numbers look familiar, that’s because this is how computer scientists think: in terms of doubling.
+An alternative representation is powers of 2: <code class="highlighter-rouge">2**1</code>, <code class="highlighter-rouge">2**2</code>, <code class="highlighter-rouge">2**3</code>, and so forth. Decimal numbers have
+a related property:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">1
+10
+100
+1000
+10000</code></pre></figure>
+
+<p>Adding a zero to the end of the number multiples the value by 10 in base-10. Make sense? The <code class="highlighter-rouge">N</code> in
+“base-N” tells you how much you are effectively multiplying the number by when you add a 0 to the end.</p>
+
+<p><em>Bonus factoid:</em> multiplying a number by 10 is often referred to as “increasing an order of magnitude”.
+To remember this, for us Californians, remember that <a href="https://en.wikipedia.org/wiki/Richter_magnitude_scale">earthquakes are often referred to by their “order
+of magnitude”</a> - a 7.0 earthquake has
+10 times more “shaking power” (SORRY, I’M NOT A GEOLOGIST) than a 6.0 earthquake.</p>
+
+<h4 id="bits-and-bytes">Bits and bytes</h4>
+
+<p>A single place in binary is called a “bit”. 8 bits is called a “byte”. How does this relate to programming?
+Suppose you create an integer. A 32-bit that is all 1s is the “largest” value you can assign in binary:</p>
+
+<p><code class="highlighter-rouge">11111111 11111111 11111111 11111111</code></p>
+
+<p>That means the maximum value an integer can have is <code class="highlighter-rouge">4294967295</code>, according to our <a href="http://www.binaryhexconverter.com/binary-to-decimal-converter">binary to decimal converter</a>. But wait! Why is the maximum
+integer value <code class="highlighter-rouge">2147483647</code>, <a href="https://en.wikipedia.org/wiki/2147483647_(number)">according to Wikipedia</a>?
+That’s because this number is the maximum <em>signed</em> integer, which includes decimals. The maximum
+unsigned integer is still <code class="highlighter-rouge">4,294,967,295</code>. Thanks <a href="https://en.wikipedia.org/wiki/32-bit">Wikipedia, again</a>!
+Representing negative numbers is outside the scope of this guide. If you’re interested, here’s <a href="https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html">Cornell’s
+guide to two’s complement</a>.</p>
+
+<p>Why isn’t a megabyte exactly 1 million bytes? Why is it 1048576 bytes? Because this is 1024 times 1024.
+1024 is 2 to the 10th power, which in binary is 1 followed by ten 0s.</p>
 
 <h1 id="intro-to-hexadecimal">Intro to Hexadecimal</h1>
 
