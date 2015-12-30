@@ -6,8 +6,8 @@
 </description>
     <link>http://ikai.github.io/</link>
     <atom:link href="http://ikai.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Dec 2015 19:10:06 -0800</pubDate>
-    <lastBuildDate>Tue, 29 Dec 2015 19:10:06 -0800</lastBuildDate>
+    <pubDate>Tue, 29 Dec 2015 19:15:09 -0800</pubDate>
+    <lastBuildDate>Tue, 29 Dec 2015 19:15:09 -0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -35,6 +35,31 @@
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Introduction to Binary and Hexadecimal</title>
+        <description>&lt;p&gt;This is a work in progress.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;1111
+000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+111000
+asda
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;intro-to-binary&quot;&gt;Intro to Binary&lt;/h1&gt;
+
+&lt;h1 id=&quot;intro-to-hexadecimal&quot;&gt;Intro to Hexadecimal&lt;/h1&gt;
+</description>
+        <pubDate>Tue, 29 Dec 2015 19:00:25 -0800</pubDate>
+        <link>http://ikai.github.io/coding/2015/12/29/introduction-to-binary-and-hexadecimal.html</link>
+        <guid isPermaLink="true">http://ikai.github.io/coding/2015/12/29/introduction-to-binary-and-hexadecimal.html</guid>
+        
+        
+        <category>coding</category>
         
       </item>
     
