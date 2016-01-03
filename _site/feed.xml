@@ -6,8 +6,8 @@
 </description>
     <link>http://ikai.github.io/</link>
     <atom:link href="http://ikai.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Dec 2015 20:00:07 -0800</pubDate>
-    <lastBuildDate>Tue, 29 Dec 2015 20:00:07 -0800</lastBuildDate>
+    <pubDate>Sat, 02 Jan 2016 20:23:00 -0800</pubDate>
+    <lastBuildDate>Sat, 02 Jan 2016 20:23:00 -0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -154,6 +154,137 @@ guide to two’s complement&lt;/a&gt;.&lt;/p&gt;
 1024 is 2 to the 10th power, which in binary is 1 followed by ten 0s.&lt;/p&gt;
 
 &lt;h1 id=&quot;intro-to-hexadecimal&quot;&gt;Intro to Hexadecimal&lt;/h1&gt;
+
+&lt;h4 id=&quot;whats-the-deal-with-hexadecimal&quot;&gt;What’s the deal with hexadecimal?&lt;/h4&gt;
+&lt;p&gt;In the way that we (humans) generally use base-10 and binary is base-2, hexadecimal is base-16. Since there
+aren’t enough Arabic/base-10 numerals to go to 16, past 9, the letters A-F (case insensitive) are used.
+Counting 0 to 20 looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;0  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 00
+1  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 01
+2  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 02
+3  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 03
+4  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 04
+5  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 05
+6  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 06
+7  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 07
+8  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 08
+9  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 09
+10 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0A
+11 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0B
+12 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0C
+13 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0D
+14 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0E
+15 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0F
+16 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 10
+17 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 11
+18 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 12
+19 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 13
+20 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 14
+...
+255 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; FF&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;See the pattern? It’s a bit misleading to see numbers such as &lt;code class=&quot;highlighter-rouge&quot;&gt;14&lt;/code&gt; in Hexadecimal. One more note:
+in more representations of hexadecimal, there are an even number of digits. That is, we would not
+see values such as &lt;code class=&quot;highlighter-rouge&quot;&gt;AAA&lt;/code&gt;, we would most likely see this value printed as &lt;code class=&quot;highlighter-rouge&quot;&gt;0AAA&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;0A AA&lt;/code&gt;. The space
+is purely for visual parsing.&lt;/p&gt;
+
+&lt;h4 id=&quot;hexadecimal-looks-familiar&quot;&gt;Hexadecimal looks familiar!&lt;/h4&gt;
+
+&lt;p&gt;Have you written HTML before? CSS? You’ve probably worked with hexadecimal. Have you ever specified an
+HTML color using a value like &lt;code class=&quot;highlighter-rouge&quot;&gt;#FFFFFF&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;#000000&lt;/code&gt;, or something weirder like &lt;code class=&quot;highlighter-rouge&quot;&gt;1DA4C6&lt;/code&gt;? This is a
+hexadecimal value! Check out the HTML color picker here:&lt;/p&gt;
+
+&lt;p&gt;http://html-color-codes.info/&lt;/p&gt;
+
+&lt;p&gt;The value #000000 represents 3 values: 0 red, 0 green and 0 blue, which equals black. The “opposite” of
+that value is &lt;code class=&quot;highlighter-rouge&quot;&gt;#FFFFFF&lt;/code&gt;, which is 255 red, 255 green and 255 blue. All of the colors in HTML can be
+specified with 256 * 256 * 256 possible values, or 16.7 million different colors.&lt;/p&gt;
+
+&lt;h4 id=&quot;relationship-between-hexadecimal-and-binary&quot;&gt;Relationship between hexadecimal and binary&lt;/h4&gt;
+
+&lt;p&gt;It is much easier to convert between hexadecimal and binary than it is to convert between either of
+those bases and straight base-10 decimal. The reason for this is that hexadecimal is base-16, which
+is a power of 2. Every hexadecimal value translates directly to a binary value:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;0  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 00 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0000
+1  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 01 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0001
+2  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 02 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0010
+3  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 03 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0011
+4  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 04 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0100
+5  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 05 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0101
+6  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 06 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0110
+7  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 07 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 0111
+8  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 08 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1000
+9  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 09 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1001
+10 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0A &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1010
+11 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0B &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1011
+12 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0C &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1100
+13 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0D &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1101
+14 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0E &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1110
+15 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0F &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0000 1111
+16 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 10 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0001 0000
+17 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 11 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0001 0001
+18 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 12 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0001 0010
+19 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 13 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0001 0011
+20 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 14 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 0001 0100
+...
+255 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; FF &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 1111 1111&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you look at the chart above, each possible hexadecimal value &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;F&lt;/code&gt; maps directly to a binary
+value between &lt;code class=&quot;highlighter-rouge&quot;&gt;0000&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;1111&lt;/code&gt;. That means that instead of having to do mental math to convert
+between hexadecimal and binary, it is as simple as looking up each value in a table and directly
+converting, or simply memorizing which hex value equals which binary value.&lt;/p&gt;
+
+&lt;h1 id=&quot;binary-and-hexadecimal-in-files&quot;&gt;Binary and hexadecimal in files&lt;/h1&gt;
+
+&lt;p&gt;At some level, all computer values map to 0s and 1s. This includes files on disk. If I create a file
+that contains the following contents and save it as &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;The quick brown fox jumps over the lazy dog.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I can view it in hex in vim by entering hexadecimal mode by hitting escape and typing:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:%!xxd&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The file now looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+0000000: 5468 6520 7175 6963 6b20 6272 6f77 6e20  The quick brown
+0000010: 666f 7820 6a75 6d70 7320 6f76 6572 2074  fox jumps over t
+0000020: 6865 206c 617a 7920 646f 672e 0a         he lazy dog..
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The left side shows first the character position followed by a colon, then the hex values of
+the characters in the file. Lower case &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; is the value &lt;code class=&quot;highlighter-rouge&quot;&gt;62&lt;/code&gt;, whereas lower case &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; is the value
+&lt;code class=&quot;highlighter-rouge&quot;&gt;61&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To view this file as binary, use this command in vim:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:%!xxd -b&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The file looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+0000000: 01010100 01101000 01100101 00100000 01110001 01110101  The qu
+0000006: 01101001 01100011 01101011 00100000 01100010 01110010  ick br
+000000c: 01101111 01110111 01101110 00100000 01100110 01101111  own fo
+0000012: 01111000 00100000 01101010 01110101 01101101 01110000  x jump
+0000018: 01110011 00100000 01101111 01110110 01100101 01110010  s over
+000001e: 00100000 01110100 01101000 01100101 00100000 01101100   the l
+0000024: 01100001 01111010 01111001 00100000 01100100 01101111  azy do
+000002a: 01100111 00101110 00001010                             g..
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If you take the time to map the binary characters to hex characters (don’t do it, it’s boring), you’ll
+see that each of the hex values maps directly to binary values. &lt;code class=&quot;highlighter-rouge&quot;&gt;01010100&lt;/code&gt; in the first 8 bits maps
+directly to &lt;code class=&quot;highlighter-rouge&quot;&gt;54&lt;/code&gt; in hex, just like in the chart above on this page.&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;Thanks for reading all this. This information becomes very useful very quickly in programming, as we will
+demonstrate in future posts.&lt;/p&gt;
+
 </description>
         <pubDate>Tue, 29 Dec 2015 19:00:25 -0800</pubDate>
         <link>http://ikai.github.io/coding/2015/12/29/introduction-to-binary-and-hexadecimal.html</link>

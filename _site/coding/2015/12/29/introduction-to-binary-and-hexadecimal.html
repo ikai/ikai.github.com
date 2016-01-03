@@ -177,6 +177,137 @@ guide to two’s complement</a>.</p>
 
 <h1 id="intro-to-hexadecimal">Intro to Hexadecimal</h1>
 
+<h4 id="whats-the-deal-with-hexadecimal">What’s the deal with hexadecimal?</h4>
+<p>In the way that we (humans) generally use base-10 and binary is base-2, hexadecimal is base-16. Since there
+aren’t enough Arabic/base-10 numerals to go to 16, past 9, the letters A-F (case insensitive) are used.
+Counting 0 to 20 looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">0  <span class="o">=</span>&gt; 00
+1  <span class="o">=</span>&gt; 01
+2  <span class="o">=</span>&gt; 02
+3  <span class="o">=</span>&gt; 03
+4  <span class="o">=</span>&gt; 04
+5  <span class="o">=</span>&gt; 05
+6  <span class="o">=</span>&gt; 06
+7  <span class="o">=</span>&gt; 07
+8  <span class="o">=</span>&gt; 08
+9  <span class="o">=</span>&gt; 09
+10 <span class="o">=</span>&gt; 0A
+11 <span class="o">=</span>&gt; 0B
+12 <span class="o">=</span>&gt; 0C
+13 <span class="o">=</span>&gt; 0D
+14 <span class="o">=</span>&gt; 0E
+15 <span class="o">=</span>&gt; 0F
+16 <span class="o">=</span>&gt; 10
+17 <span class="o">=</span>&gt; 11
+18 <span class="o">=</span>&gt; 12
+19 <span class="o">=</span>&gt; 13
+20 <span class="o">=</span>&gt; 14
+...
+255 <span class="o">=</span>&gt; FF</code></pre></figure>
+
+<p>See the pattern? It’s a bit misleading to see numbers such as <code class="highlighter-rouge">14</code> in Hexadecimal. One more note:
+in more representations of hexadecimal, there are an even number of digits. That is, we would not
+see values such as <code class="highlighter-rouge">AAA</code>, we would most likely see this value printed as <code class="highlighter-rouge">0AAA</code> or <code class="highlighter-rouge">0A AA</code>. The space
+is purely for visual parsing.</p>
+
+<h4 id="hexadecimal-looks-familiar">Hexadecimal looks familiar!</h4>
+
+<p>Have you written HTML before? CSS? You’ve probably worked with hexadecimal. Have you ever specified an
+HTML color using a value like <code class="highlighter-rouge">#FFFFFF</code>, <code class="highlighter-rouge">#000000</code>, or something weirder like <code class="highlighter-rouge">1DA4C6</code>? This is a
+hexadecimal value! Check out the HTML color picker here:</p>
+
+<p>http://html-color-codes.info/</p>
+
+<p>The value #000000 represents 3 values: 0 red, 0 green and 0 blue, which equals black. The “opposite” of
+that value is <code class="highlighter-rouge">#FFFFFF</code>, which is 255 red, 255 green and 255 blue. All of the colors in HTML can be
+specified with 256 * 256 * 256 possible values, or 16.7 million different colors.</p>
+
+<h4 id="relationship-between-hexadecimal-and-binary">Relationship between hexadecimal and binary</h4>
+
+<p>It is much easier to convert between hexadecimal and binary than it is to convert between either of
+those bases and straight base-10 decimal. The reason for this is that hexadecimal is base-16, which
+is a power of 2. Every hexadecimal value translates directly to a binary value:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">0  <span class="o">=</span>&gt; 00 <span class="o">=</span>&gt; 0000 0000
+1  <span class="o">=</span>&gt; 01 <span class="o">=</span>&gt; 0000 0001
+2  <span class="o">=</span>&gt; 02 <span class="o">=</span>&gt; 0000 0010
+3  <span class="o">=</span>&gt; 03 <span class="o">=</span>&gt; 0000 0011
+4  <span class="o">=</span>&gt; 04 <span class="o">=</span>&gt; 0000 0100
+5  <span class="o">=</span>&gt; 05 <span class="o">=</span>&gt; 0000 0101
+6  <span class="o">=</span>&gt; 06 <span class="o">=</span>&gt; 0000 0110
+7  <span class="o">=</span>&gt; 07 <span class="o">=</span>&gt; 0000 0111
+8  <span class="o">=</span>&gt; 08 <span class="o">=</span>&gt; 0000 1000
+9  <span class="o">=</span>&gt; 09 <span class="o">=</span>&gt; 0000 1001
+10 <span class="o">=</span>&gt; 0A <span class="o">=</span>&gt; 0000 1010
+11 <span class="o">=</span>&gt; 0B <span class="o">=</span>&gt; 0000 1011
+12 <span class="o">=</span>&gt; 0C <span class="o">=</span>&gt; 0000 1100
+13 <span class="o">=</span>&gt; 0D <span class="o">=</span>&gt; 0000 1101
+14 <span class="o">=</span>&gt; 0E <span class="o">=</span>&gt; 0000 1110
+15 <span class="o">=</span>&gt; 0F <span class="o">=</span>&gt; 0000 1111
+16 <span class="o">=</span>&gt; 10 <span class="o">=</span>&gt; 0001 0000
+17 <span class="o">=</span>&gt; 11 <span class="o">=</span>&gt; 0001 0001
+18 <span class="o">=</span>&gt; 12 <span class="o">=</span>&gt; 0001 0010
+19 <span class="o">=</span>&gt; 13 <span class="o">=</span>&gt; 0001 0011
+20 <span class="o">=</span>&gt; 14 <span class="o">=</span>&gt; 0001 0100
+...
+255 <span class="o">=</span>&gt; FF <span class="o">=</span>&gt; 1111 1111</code></pre></figure>
+
+<p>If you look at the chart above, each possible hexadecimal value <code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">F</code> maps directly to a binary
+value between <code class="highlighter-rouge">0000</code> and <code class="highlighter-rouge">1111</code>. That means that instead of having to do mental math to convert
+between hexadecimal and binary, it is as simple as looking up each value in a table and directly
+converting, or simply memorizing which hex value equals which binary value.</p>
+
+<h1 id="binary-and-hexadecimal-in-files">Binary and hexadecimal in files</h1>
+
+<p>At some level, all computer values map to 0s and 1s. This includes files on disk. If I create a file
+that contains the following contents and save it as <code class="highlighter-rouge">test.txt</code>:</p>
+
+<p><code class="highlighter-rouge">The quick brown fox jumps over the lazy dog.</code></p>
+
+<p>I can view it in hex in vim by entering hexadecimal mode by hitting escape and typing:</p>
+
+<p><code class="highlighter-rouge">:%!xxd</code></p>
+
+<p>The file now looks like this:</p>
+
+<p><code class="highlighter-rouge">
+0000000: 5468 6520 7175 6963 6b20 6272 6f77 6e20  The quick brown
+0000010: 666f 7820 6a75 6d70 7320 6f76 6572 2074  fox jumps over t
+0000020: 6865 206c 617a 7920 646f 672e 0a         he lazy dog..
+</code></p>
+
+<p>The left side shows first the character position followed by a colon, then the hex values of
+the characters in the file. Lower case <code class="highlighter-rouge">b</code> is the value <code class="highlighter-rouge">62</code>, whereas lower case <code class="highlighter-rouge">a</code> is the value
+<code class="highlighter-rouge">61</code>.</p>
+
+<p>To view this file as binary, use this command in vim:</p>
+
+<p><code class="highlighter-rouge">:%!xxd -b</code></p>
+
+<p>The file looks like this:</p>
+
+<p><code class="highlighter-rouge">
+0000000: 01010100 01101000 01100101 00100000 01110001 01110101  The qu
+0000006: 01101001 01100011 01101011 00100000 01100010 01110010  ick br
+000000c: 01101111 01110111 01101110 00100000 01100110 01101111  own fo
+0000012: 01111000 00100000 01101010 01110101 01101101 01110000  x jump
+0000018: 01110011 00100000 01101111 01110110 01100101 01110010  s over
+000001e: 00100000 01110100 01101000 01100101 00100000 01101100   the l
+0000024: 01100001 01111010 01111001 00100000 01100100 01101111  azy do
+000002a: 01100111 00101110 00001010                             g..
+</code></p>
+
+<p>If you take the time to map the binary characters to hex characters (don’t do it, it’s boring), you’ll
+see that each of the hex values maps directly to binary values. <code class="highlighter-rouge">01010100</code> in the first 8 bits maps
+directly to <code class="highlighter-rouge">54</code> in hex, just like in the chart above on this page.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>Thanks for reading all this. This information becomes very useful very quickly in programming, as we will
+demonstrate in future posts.</p>
+
+
   </div>
 
 </article>
