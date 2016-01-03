@@ -171,9 +171,9 @@ is purely for visual parsing.
 
 Have you written HTML before? CSS? You've probably worked with hexadecimal. Have you ever specified an
 HTML color using a value like `#FFFFFF`, `#000000`, or something weirder like `1DA4C6`? This is a
-hexadecimal value! Check out the HTML color picker here:
+hexadecimal value! Check out the [HTML color picker here](http://html-color-codes.info/).
 
-http://html-color-codes.info/
+
 
 The value #000000 represents 3 values: 0 red, 0 green and 0 blue, which equals black. The "opposite" of
 that value is `#FFFFFF`, which is 255 red, 255 green and 255 blue. All of the colors in HTML can be

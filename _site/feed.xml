@@ -6,8 +6,8 @@
 </description>
     <link>http://ikai.github.io/</link>
     <atom:link href="http://ikai.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Jan 2016 20:23:00 -0800</pubDate>
-    <lastBuildDate>Sat, 02 Jan 2016 20:23:00 -0800</lastBuildDate>
+    <pubDate>Sat, 02 Jan 2016 20:27:11 -0800</pubDate>
+    <lastBuildDate>Sat, 02 Jan 2016 20:27:11 -0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -193,9 +193,7 @@ is purely for visual parsing.&lt;/p&gt;
 
 &lt;p&gt;Have you written HTML before? CSS? You’ve probably worked with hexadecimal. Have you ever specified an
 HTML color using a value like &lt;code class=&quot;highlighter-rouge&quot;&gt;#FFFFFF&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;#000000&lt;/code&gt;, or something weirder like &lt;code class=&quot;highlighter-rouge&quot;&gt;1DA4C6&lt;/code&gt;? This is a
-hexadecimal value! Check out the HTML color picker here:&lt;/p&gt;
-
-&lt;p&gt;http://html-color-codes.info/&lt;/p&gt;
+hexadecimal value! Check out the &lt;a href=&quot;http://html-color-codes.info/&quot;&gt;HTML color picker here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The value #000000 represents 3 values: 0 red, 0 green and 0 blue, which equals black. The “opposite” of
 that value is &lt;code class=&quot;highlighter-rouge&quot;&gt;#FFFFFF&lt;/code&gt;, which is 255 red, 255 green and 255 blue. All of the colors in HTML can be
