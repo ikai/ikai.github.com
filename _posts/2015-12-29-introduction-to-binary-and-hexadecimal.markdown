@@ -265,8 +265,9 @@ Summary
 ===
 
 Thanks for reading all this. This information becomes very useful very quickly in programming, as we will
-demonstrate in future posts.
+demonstrate in future posts. Thanks for sticking with it! Here is a math kitty.
 
+![Math kitty](http://www.mathfunny.com/images/kitty-math-book-boring.jpg)
 
 
 

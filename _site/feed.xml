@@ -6,8 +6,8 @@
 </description>
     <link>http://ikai.github.io/</link>
     <atom:link href="http://ikai.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Jan 2016 20:27:11 -0800</pubDate>
-    <lastBuildDate>Sat, 02 Jan 2016 20:27:11 -0800</lastBuildDate>
+    <pubDate>Sat, 02 Jan 2016 20:30:15 -0800</pubDate>
+    <lastBuildDate>Sat, 02 Jan 2016 20:30:15 -0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -281,7 +281,9 @@ directly to &lt;code class=&quot;highlighter-rouge&quot;&gt;54&lt;/code&gt; in h
 &lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
 
 &lt;p&gt;Thanks for reading all this. This information becomes very useful very quickly in programming, as we will
-demonstrate in future posts.&lt;/p&gt;
+demonstrate in future posts. Thanks for sticking with it! Here is a math kitty.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.mathfunny.com/images/kitty-math-book-boring.jpg&quot; alt=&quot;Math kitty&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 29 Dec 2015 19:00:25 -0800</pubDate>
